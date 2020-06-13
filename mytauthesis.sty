@@ -1,0 +1,66 @@
+% based on: https://www.overleaf.com/project/5ebaea29dcf23300014fc50e
+
+\def\Degreetext#1{\gdef\@Degreetext{#1}} 
+  \Degreetext{MA thesis submitted by\\}
+\def\textofby#1{\gdef\@textofby{#1}}  \textofby{by}
+\def\textofApproved#1{\gdef\@textofApproved{#1}}  \textofApproved{Thesis advisor:}
+\def\textofDate#1{\gdef\@textofDate{#1}}  \textofDate{Date}
+
+
+\def\titlepage{                   % Prints the title page
+    \thispagestyle{empty}
+            \centerline{\includegraphics[width=.3\textwidth]{taulogo.png}}
+    \begin{center}
+      \large
+      \par
+      \par
+      \@Faculty
+      \par
+      \@School
+      \par
+      \@Department
+      \par
+      \vspace{84pt}
+      {\LARGE
+      \lineskip 3ex
+      \textbf{\@Title\par}}                  %% The Title
+      \vskip0pt plus2fill\relax
+      \vskip0pt plus2fill\relax
+      \large
+      \@Degreetext                  %% A Thesis\ldots of
+      \par
+      \textbf{\@Author}                      %% Author
+      \par\vskip0pt plus1fill\relax
+      \par
+     \@textofApproved                  %% Thesis advisor
+      \par
+      \textbf{\@Supervisor}
+    \end{center}
+     \vskip0pt plus1fill\relax
+    \begin{center}
+      \large
+      \par\vskip0pt plus2fill\relax
+      \par
+      \@Year                       %% Year
+      \par
+    \end{center}
+    \mbox{}
+    \let\titlepage\relax}
+
+
+%
+%      (The following macros are used once and discarded)
+%
+%  Title page
+%
+%  options and defaults
+%
+\def\Title#1{\gdef\@Title{#1}}
+\def\Author#1{\gdef\@Author{#1}}
+\def\Year#1{\gdef\@Year{#1}}  \Year{\year}
+\def\Supervisor#1{\gdef\@Supervisor{#1}}
+\def\Department#1{\gdef\@Department{#1}}
+\def\Year#1{\gdef\@Year{#1}}  \Year{\year}
+\def\Faculty#1{\gdef\@Faculty{#1}}
+\def\School#1{\gdef\@School{#1}}
+
